@@ -10,14 +10,14 @@ import java.util.Optional;
  */
 public interface VacancyRepository {
 
- Vacancy save(Vacancy vacancy);
+    Vacancy save(Vacancy vacancy);
 
- void deleteById(int id);
+    void deleteById(int id);
 
- boolean update(Vacancy vacancy);
+    boolean update(Vacancy vacancy);
 
- Optional<Vacancy> findById(int id);
+    Optional<Vacancy> findById(int id);
 
- Collection<Vacancy> findAll();
+    Collection<Vacancy> findAll();
 
 }
