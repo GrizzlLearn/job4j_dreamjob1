@@ -12,7 +12,7 @@ public interface VacancyRepository {
 
     Vacancy save(Vacancy vacancy);
 
-    void deleteById(int id);
+    Optional<Vacancy> deleteById(int id);
 
     boolean update(Vacancy vacancy);
 
