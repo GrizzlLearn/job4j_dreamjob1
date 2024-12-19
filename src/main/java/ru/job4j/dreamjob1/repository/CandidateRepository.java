@@ -12,7 +12,7 @@ import java.util.Optional;
 public interface CandidateRepository {
     Candidate save(Candidate candidate);
 
-    void deleteById(int id);
+    Optional<Candidate> deleteById(int id);
 
     boolean update(Candidate candidate);
 
