@@ -42,7 +42,7 @@ public class VacancyController {
         var vacancyOptional = vacancyService.findById(id);
         if (vacancyOptional.isEmpty()) {
             model.addAttribute("message", "The vacancy with the specified ID was not found.");
-            return "errors/404";
+            return "error/404";
         }
         model.addAttribute("vacancy", vacancyOptional.get());
         return "vacancies/updateDelete";
@@ -53,7 +53,7 @@ public class VacancyController {
         var isUpdated = vacancyService.update(vacancy);
         if (!isUpdated) {
             model.addAttribute("message", "The vacancy with the specified ID was not found.");
-            return "errors/404";
+            return "error/404";
         }
         return "redirect:/vacancies";
     }
