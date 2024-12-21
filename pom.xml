@@ -20,7 +20,7 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
+<!--
     <profiles>
         <profile>
             <id>test</id>
@@ -38,7 +38,7 @@
             </properties>
         </profile>
     </profiles>
-
+-->
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -146,6 +146,7 @@
                     </excludes>
                 </configuration>
             </plugin>
+            <!--
             <plugin>
                 <groupId>org.liquibase</groupId>
                 <artifactId>liquibase-maven-plugin</artifactId>
@@ -163,6 +164,7 @@
                     </execution>
                 </executions>
             </plugin>
+            -->
         </plugins>
     </build>
 
