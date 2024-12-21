@@ -2,6 +2,10 @@ package ru.job4j.dreamjob1.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 /**
  * @author dl
@@ -10,9 +14,10 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class Candidate {
     private int id;
     private String name;
     private String description;
-    private String creationDate;
+    private LocalDateTime creationDate = LocalDateTime.now();
 }

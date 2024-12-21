@@ -3,6 +3,7 @@ package ru.job4j.dreamjob1.repository;
 import org.springframework.stereotype.Repository;
 import ru.job4j.dreamjob1.model.Candidate;
 
+import java.time.LocalDateTime;
 import java.util.*;
 
 /**
@@ -19,11 +20,11 @@ public class MemoryCandidateRepository implements CandidateRepository {
     private final Map<Integer, Candidate> candidates = new HashMap<>();
 
     private MemoryCandidateRepository() {
-        save(new Candidate(0, "Иван Петров", "Опытный Java-разработчик", "2024-12-15"));
-        save(new Candidate(0, "Анна Иванова", "Начинающий аналитик", "2024-11-30"));
-        save(new Candidate(0, "Сергей Сидоров", "Middle Java Developer", "2024-10-05"));
-        save(new Candidate(0, "Мария Смирнова", "Frontend-разработчик", "2024-09-20"));
-        save(new Candidate(0, "Алексей Кузнецов", "DevOps-инженер", "2024-08-01"));
+        save(new Candidate(0, "Иван Петров", "Опытный Java-разработчик", LocalDateTime.now()));
+        save(new Candidate(0, "Анна Иванова", "Начинающий аналитик", LocalDateTime.now()));
+        save(new Candidate(0, "Сергей Сидоров", "Middle Java Developer", LocalDateTime.now()));
+        save(new Candidate(0, "Мария Смирнова", "Frontend-разработчик", LocalDateTime.now()));
+        save(new Candidate(0, "Алексей Кузнецов", "DevOps-инженер", LocalDateTime.now()));
     }
 
     public static MemoryCandidateRepository getInstance() {
