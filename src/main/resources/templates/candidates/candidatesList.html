@@ -11,6 +11,7 @@
 				<th scope="col">#</th>
 				<th scope="col">Имя</th>
 				<th scope="col">Дата Создания</th>
+				<th scope="col">Город</th>
 			</tr>
 			</thead>
 			<tbody>
@@ -22,7 +23,8 @@
 					</a>
 				</td>
 				<td th:text="${candidate.description}"/>
-				<td th:text="${candidate.creationDate}" />
+				<td th:text="${candidate.creationDate}"/>
+				<td th:text="${candidate.cityId}"/>
 			</tr>
 			</tbody>
 		</table>
