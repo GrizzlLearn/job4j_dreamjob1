@@ -40,6 +40,7 @@ public class VacancyController {
         return "vacancies/vacanciesCreate";
     }
 
+    //TODO
     @PostMapping("/create")
     public String create(@ModelAttribute Vacancy vacancy) {
         vacancyService.save(vacancy);
