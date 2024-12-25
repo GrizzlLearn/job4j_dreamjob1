@@ -5,8 +5,6 @@ import org.springframework.stereotype.Repository;
 import ru.job4j.dreamjob1.model.Vacancy;
 import java.time.LocalDateTime;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -25,12 +23,12 @@ public class MemoryVacancyRepository implements VacancyRepository {
     private final ConcurrentHashMap<Integer, Vacancy> vacancies = new ConcurrentHashMap<>();
 
     private MemoryVacancyRepository() {
-        save(new Vacancy(0, "Intern Java Developer", "Intern Java Developer", LocalDateTime.now(), true));
-        save(new Vacancy(0, "Junior Java Developer", "Junior Java Developer", LocalDateTime.now(), true));
-        save(new Vacancy(0, "Junior+ Java Developer", "Junior+ Java Developer", LocalDateTime.now(), true));
-        save(new Vacancy(0, "Middle Java Developer", "Middle Java Developer", LocalDateTime.now(), true));
-        save(new Vacancy(0, "Middle+ Java Developer", "Middle+ Java Developer", LocalDateTime.now(), true));
-        save(new Vacancy(0, "Senior Java Developer", "Senior Java Developer", LocalDateTime.now(), false));
+        save(new Vacancy(0, "Intern Java Developer", "Intern Java Developer", LocalDateTime.now(), true, 1));
+        save(new Vacancy(0, "Junior Java Developer", "Junior Java Developer", LocalDateTime.now(), true, 2));
+        save(new Vacancy(0, "Junior+ Java Developer", "Junior+ Java Developer", LocalDateTime.now(), true, 3));
+        save(new Vacancy(0, "Middle Java Developer", "Middle Java Developer", LocalDateTime.now(), true, 2));
+        save(new Vacancy(0, "Middle+ Java Developer", "Middle+ Java Developer", LocalDateTime.now(), true, 1));
+        save(new Vacancy(0, "Senior Java Developer", "Senior Java Developer", LocalDateTime.now(), false, 1));
     }
 
     /**
@@ -57,7 +55,7 @@ public class MemoryVacancyRepository implements VacancyRepository {
     @Override
     public boolean update(Vacancy vacancy) {
         return vacancies.computeIfPresent(vacancy.getId(),
-                (id, oldVacancy) -> new Vacancy(oldVacancy.getId(), vacancy.getTitle(), vacancy.getDescription(), vacancy.getCreationDate(), vacancy.getVisible())) != null;
+                (id, oldVacancy) -> new Vacancy(oldVacancy.getId(), vacancy.getTitle(), vacancy.getDescription(), vacancy.getCreationDate(), vacancy.getVisible(), vacancy.getCityId())) != null;
     }
 
     @Override

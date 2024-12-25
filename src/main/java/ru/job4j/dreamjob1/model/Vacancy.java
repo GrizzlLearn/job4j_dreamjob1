@@ -20,6 +20,7 @@ public class Vacancy {
     private String description;
     private LocalDateTime creationDate = LocalDateTime.now();
     private boolean visible;
+    private int cityId;
 
     public boolean getVisible() {
         return this.visible;
